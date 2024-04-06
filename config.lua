@@ -5,6 +5,7 @@
 reload("user.options")
 reload("user.keymaps")
 reload("user.plugins")
+
 -- ----------------------
 -- Treesitter
 ------------------------
@@ -20,6 +21,16 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   { command = "goimports", filetypes = { "go" } },
   { command = "gofumpt",   filetypes = { "go" } },
+  {
+    command = "prettier",
+    extra_args = { "--print-width", "100" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typecriptreact" }
+  }
+}
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  { command = "eslint_d", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } }
 }
 
 lvim.format_on_save = {
