@@ -3,9 +3,10 @@ lvim.colorscheme = "lunar"
 vim.opt.relativenumber = true
 vim.opt.tabstop = 2
 
-lvim.format_on_save.enabled = true
-lvim.format_on_save.pattern = {
-  "*.go"
+lvim.format_on_save = {
+  enabled = true,
+  pattern = "*",
+  timeout = 1500
 }
 
 lvim.builtin.treesitter.ensure_installed = {

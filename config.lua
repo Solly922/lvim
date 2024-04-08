@@ -12,7 +12,12 @@ reload("user.plugins")
 lvim.builtin.treesitter.ensure_installed = {
   "go",
   "gomod",
+  "lua",
+  "javascript",
+  "typescript",
+  "json"
 }
+
 
 ------------------------
 -- Formatting
@@ -23,19 +28,23 @@ formatters.setup {
   { command = "gofumpt",   filetypes = { "go" } },
   {
     command = "prettier",
-    extra_args = { "--print-width", "100" },
-    filetypes = { "javascript", "javascriptreact", "typescript", "typecriptreact" }
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "html", "css", "json" }
   }
 }
 
-local linters = require "lvim.lsp.null-ls.linters"
-linters.setup {
-  { command = "eslint_d", filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" } }
-}
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   {
+--     command = { "eslint_d", filetypes = {
+--       "javascript", "javascriptreact",
+--       "typescript", "typescriptreact"
+--     } }
+--   }
+-- }
 
-lvim.format_on_save = {
-  pattern = { "*.go" },
-}
+-- lvim.format_on_save = {
+--   pattern = { "*.lua", "*.go", "*.ts", "*.js", "*.tsx", "*.jsx" },
+-- }
 
 ------------------------
 -- Dap
@@ -94,6 +103,14 @@ lsp_manager.setup("gopls", {
     },
   },
 })
+
+-- local tsserver_flags = {}
+-- lsp_manager.setup("tsserver", {
+--   cmd = { "clangd", unpack(tsserver_flags) },
+--   on_attach = require("lvim.lsp").common_on_attach,
+--   on_init = require("lvim.lsp").common_on_init,
+--   capabilities = require("lvim.lsp").common_capabilities,
+-- })
 
 local status_ok, gopher = pcall(require, "gopher")
 if not status_ok then

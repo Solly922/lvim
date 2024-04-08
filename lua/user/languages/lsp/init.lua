@@ -12,6 +12,8 @@ lvim.lsp.installer.setup.ensure_installed = {
   "golangci-lint",
 }
 
+reload("user.languages.lsp.lua")
+
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)
   if client.server_capabilities.signatureHelpProvider then
