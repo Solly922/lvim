@@ -13,6 +13,7 @@ lvim.lsp.installer.setup.ensure_installed = {
 }
 
 reload("user.languages.lsp.lua")
+reload("user.languages.lsp.go")
 
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)

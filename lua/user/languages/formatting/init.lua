@@ -7,6 +7,7 @@ local config_file_names_eslint = require("user.languages.config-file-names").esl
 local config_file_names_prettier = require("user.languages.config-file-names").prettier
 
 local formatters = require "lvim.lsp.null-ls.formatters"
+
 formatters.setup({
   formatting.eslint_d.with {
     condition = function(nls_utils)
@@ -19,4 +20,6 @@ formatters.setup({
     end,
     prefer_local = "node_modules/.bin",
   },
+  formatting.goimports,
+  formatting.gofumpt,
 })
