@@ -9,12 +9,11 @@ local config_file_names_prettier = require("user.languages.config-file-names").p
 local formatters = require "lvim.lsp.null-ls.formatters"
 
 formatters.setup({
-  formatting.eslint_d.with {
-    condition = function(nls_utils)
-      return nls_utils.root_has_file(config_file_names_eslint) or user_utils.is_in_package_json "eslint"
-    end,
+  formatting.eslint_d,
+  formatting.prettierd.with {
+    args = { "--single-attribute-per-line" },
   },
-  formatting.prettierd,
+
   formatting.goimports,
   formatting.gofumpt,
 })
