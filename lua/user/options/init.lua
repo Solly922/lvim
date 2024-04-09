@@ -1,4 +1,4 @@
-lvim.log.level = "debug"
+lvim.log.level = "warn"
 
 lvim.colorscheme = "lunar"
 
