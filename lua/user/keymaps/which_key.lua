@@ -1,3 +1,13 @@
+-- Which-key: AI (Copilot, ...)
+lvim.builtin.which_key.mappings["a"] = {
+  name = "+A.I. (Copilot)",
+  s = { "<cmd>Copilot suggestion<cr>", "Copilot: toggle suggestions " },
+  p = { "<cmd>Copilot panel<cr>", "Copilot: toggle panel" },
+  c = { "<cmd>Copilot toggle<cr>", "Copilot: toggle" },
+  S = { "<cmd>Copilot status<cr>", "Copilot: Status" },
+  v = { "<cmd>Copilot version<cr>", "Copilot: version" },
+}
+
 local restartActiveLsp = function()
   local clients = vim.lsp.get_active_clients()
   for _, client in pairs(clients) do

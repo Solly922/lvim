@@ -7,7 +7,7 @@ lvim.plugins = {
   -- Github Copilot
   --
   {
-    "github/copilot.nvim",
+    "github/copilot.vim",
     config = function()
       require("user.plugins.copilot").config_vim()
     end,
