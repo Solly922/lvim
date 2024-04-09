@@ -14,12 +14,7 @@ formatters.setup({
       return nls_utils.root_has_file(config_file_names_eslint) or user_utils.is_in_package_json "eslint"
     end,
   },
-  formatting.prettier.with {
-    condition = function(nls_utils)
-      return nls_utils.root_has_file(config_file_names_prettier) or user_utils.is_in_package_json "prettier"
-    end,
-    prefer_local = "node_modules/.bin",
-  },
+  formatting.prettierd,
   formatting.goimports,
   formatting.gofumpt,
 })

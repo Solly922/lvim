@@ -1,3 +1,5 @@
+lvim.log.level = "debug"
+
 lvim.colorscheme = "lunar"
 
 vim.opt.relativenumber = true

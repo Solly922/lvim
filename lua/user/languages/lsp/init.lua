@@ -9,11 +9,11 @@ lvim.lsp.installer.setup.ensure_installed = {
   "bicep",
   "gopls",
   "golangci_lint_ls",
-  "golangci-lint",
 }
 
-reload("user.languages.lsp.lua")
-reload("user.languages.lsp.go")
+reload "user.languages.lsp.lua"
+reload "user.languages.lsp.go"
+reload "user.languages.lsp.ts"
 
 -- Setup lsp-overloads if plugin is installed
 lvim.lsp.on_attach_callback = function(client, _)
