@@ -10,10 +10,24 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 
 formatters.setup({
   formatting.eslint_d,
-  formatting.prettierd.with {
-    args = { "--single-attribute-per-line" },
+  formatting.prettier.with {
+    condition = function(nls_utils)
+      return nls_utils.root_has_file(config_file_names_prettier) or user_utils.is_in_package_json("prettier")
+    end
   },
-
+  {
+    name = "prettierd",
+    ---@usage arguments to pass to the formatter
+    -- these cannot contain whitespace
+    -- options such as `--line-width 80` become either `{"--line-width", "80"}` or `{"--line-width=80"}`
+    args = {
+      "--single-attribute-per-line",
+      "--trailing-comma=es5",
+      "--print-width=80",
+    },
+    ---@usage only start in these filetypes, by default it will attach to all filetypes it supports
+    -- filetypes = { "typescript", "typescriptreact" },
+  },
   formatting.goimports,
   formatting.gofumpt,
 })
