@@ -11,11 +11,7 @@ lvim.format_on_save = {
   timeout = 1500
 }
 
-lvim.builtin.treesitter.autotag = {
-  enable = true,
-  enable_rename = true,
-  enable_close = true,
-}
+lvim.builtin.treesitter.autotag.enable = true
 
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
