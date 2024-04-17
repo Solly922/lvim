@@ -1,9 +1,9 @@
 -- Which-key: AI (Copilot, ...)
 lvim.builtin.which_key.mappings["a"] = {
   name = "+A.I. (Copilot)",
-  s = { "<cmd>Copilot suggestion<cr>", "Copilot: toggle suggestions " },
+  e = { "<cmd>Copilot enable<cr>", "Copilot: enable" },
+  d = { "<cmd>Copilot disable<cr>", "Copilot: disable" },
   p = { "<cmd>Copilot panel<cr>", "Copilot: toggle panel" },
-  c = { "<cmd>Copilot toggle<cr>", "Copilot: toggle" },
   S = { "<cmd>Copilot status<cr>", "Copilot: Status" },
   v = { "<cmd>Copilot version<cr>", "Copilot: version" },
 }
