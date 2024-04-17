@@ -8,6 +8,9 @@ lvim.builtin.which_key.mappings["a"] = {
   v = { "<cmd>Copilot version<cr>", "Copilot: version" },
 }
 
+-- Add to Which-key: T (Treesitter, ...)
+lvim.builtin.which_key.mappings['Tc'] = { "<cmd>TSContextToggle<cr>", "Toggle Treesitter Context" }
+
 local restartActiveLsp = function()
   local clients = vim.lsp.get_active_clients()
   for _, client in pairs(clients) do
