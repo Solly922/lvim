@@ -12,6 +12,7 @@ lvim.format_on_save = {
 }
 
 lvim.builtin.treesitter.autotag.enable = true
+lvim.builtin.treesitter.rainbow.enable = true
 
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
