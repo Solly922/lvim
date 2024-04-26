@@ -93,5 +93,9 @@ lvim.plugins = {
         post_hook = nil,             -- Function to run after the scrolling animation ends
       })
     end,
+  },
+  {
+    "wakatime/vim-wakatime",
+    lazy = false,
   }
 }
