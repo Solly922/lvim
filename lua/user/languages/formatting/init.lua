@@ -7,6 +7,13 @@ local config_file_names_eslint = require("user.languages.config-file-names").esl
 local config_file_names_prettier = require("user.languages.config-file-names").prettier
 
 local formatters = require "lvim.lsp.null-ls.formatters"
+local linters = require "lvim.lsp.null-ls.linters"
+
+linters.setup({
+  {
+    name = "eslint_d"
+  }
+})
 
 formatters.setup({
   formatting.eslint_d,
