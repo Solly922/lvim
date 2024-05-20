@@ -98,6 +98,7 @@ lvim.plugins = {
     "wakatime/vim-wakatime",
     lazy = false,
   },
+  -- comment out for first time install
   {
     "antosha417/nvim-lsp-file-operations",
     dependencies = {
