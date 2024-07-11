@@ -1,7 +1,7 @@
 local lua_ls = "lua_ls"
 
 lvim.lsp.automatic_configuration.skipped_servers =
-  vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { lua_ls })
+    vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { lua_ls })
 
 -- Additionl configuration for lua_ls
 -- See also:
